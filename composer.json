@@ -1,0 +1,8 @@
+{
+    "name": "lzaplata/bootstrap-5-sass-theme",
+    "type": "october-theme",
+    "description": "Skeleton theme based on Bootstrap 5 with SASS and Bootstrap Icons.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
