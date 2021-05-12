@@ -1,0 +1,15 @@
+{
+    "name": "lzaplata/bootstrap-5-sass",
+    "type": "october-theme",
+    "description": "Skeleton theme based on Bootstrap 5 with SASS and Bootstrap Icons.",
+    "keywords": ["october", "cms", "theme", "bootstrap 5", "sass", "bootstrap icons"],
+    "authors": [
+        {
+            "name": "Lukáš Záplata",
+            "email": "lukas.zaplata@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
