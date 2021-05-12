@@ -1,4 +1,5 @@
 node_modules
 meta
-assets/sass
+assets/css
+assets/js
 package-lock.json

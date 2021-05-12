@@ -1,0 +1,16 @@
+{
+  "name": "bootstrap-5-sass",
+  "version": "1.0.0",
+  "description": "Skeleton theme based on Bootstrap 5 with SASS and Bootstrap Icons.",
+  "author": "Lukáš Záplata",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.0",
+    "bootstrap-icons": "^1.4.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-clean-css": "^4.3.0",
+    "@popperjs/core": "^2.9.2",
+    "jquery": "^3.6.0"
+  }
+}

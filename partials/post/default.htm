@@ -1,0 +1,59 @@
+{% set post = __SELF__.post %}
+
+<section class="container-fluid">
+    <div class="container-md">
+        <h1 class="mb-4">
+            {{ post.title }}
+        </h1>
+
+        <div class="content">
+            {{ post.content_html|raw }}
+        </div>
+
+        {% if post.featured_images.count %}
+            <div class="mt-5">
+                <div id="gallery" class="row row-cols-xl-4 g-4 w-100">
+                    {% for image in post.featured_images|slice(1) %}
+                        <div class="col" data-src="{{ image.path }}" data-sub-html="<h4 style='color: white;'>{{ image.title }}</h4><p>{{ image.description }}</p>">
+                            <a href="#">
+                                <img class="img-thumbnail" src="{{ image.getThumb(gallerySlug.properties.width, gallerySlug.properties.height, gallerySlug.properties.resizer) }}" alt="{{ image.title }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+{% put scripts %}
+    <script>
+        $(document).ready(function() {
+            var gallery = $("#gallery").lightGallery({
+                // Elements
+                thumbnail   : {{ gallerySlug.properties.thumbnail }},
+                caption     : {{ gallerySlug.properties.caption }},
+                desc        : {{ gallerySlug.properties.desc }},
+                counter     : {{ gallerySlug.properties.counter }},
+                controls    : {{ gallerySlug.properties.controls }},
+                preload     : {{ gallerySlug.properties.preload }},
+
+                // Transitions
+                mode   : '{{ gallerySlug.properties.mode }}',
+                useCSS : true,
+                easing : 'linear',
+                speed  : {{ gallerySlug.properties.speed }},
+
+                // Navigation
+                hideControlOnEnd : false,
+                loop             : {{ gallerySlug.properties.loop }},
+                auto             : {{ gallerySlug.properties.auto }},
+                pause            : {{ gallerySlug.properties.pause }},
+                escKey           : {{ gallerySlug.properties.escKey }},
+                swipeThreshold    : 50,
+
+                lang : { allPhotos: '{{ gallerySlug.properties.lang }}' },
+            });
+        });
+    </script>
+{% endput %}

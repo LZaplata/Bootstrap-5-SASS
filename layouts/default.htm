@@ -1,0 +1,41 @@
+[staticPage]
+useContent = 1
+default = 1
+==
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        
+        <link rel="icon" href="{{ 'assets/images/favicon.png'|theme }}" />
+
+        <title>{{ this.page.title }}</title>
+
+        {% styles %}
+
+        <link rel="stylesheet" href="{{ [
+            'assets/css/theme.css',
+            'assets/css/bootstrap-icons.css',
+        ]|theme }}" />
+    </head>
+
+    <body>
+        {% partial "header" %}
+
+        <main class="mt-5">
+            {% page %}
+        </main>
+
+        <script src="{{ [
+            'assets/js/jquery.min.js',
+            'assets/js/bootstrap.js'
+        ]|theme }}"></script>
+
+        {% framework %}
+        {% framework extras %}
+        {% scripts %}
+    </body>
+</html>

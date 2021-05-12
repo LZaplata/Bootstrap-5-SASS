@@ -1,0 +1,41 @@
+<div id="{{ __SELF__ }}" class="row row-cols-xl-4 g-4 w-100">
+    {% for image in gallery.images %}
+        <div class="col" data-src="{{ image.path }}" data-sub-html="<h4 style='color: white;'>{{ image.title }}</h4><p>{{ image.description }}</p>">
+            <a href="#">
+                <img class="img-fluid" src="{{ image.getThumb(width, height, resizer) }}" alt="{{ image.title }}" />
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+{% put scripts %}
+    <script>
+         $(document).ready(function() {
+            var {{ __SELF__ }} = $("#{{ __SELF__ }}").lightGallery({
+                // Elements
+                thumbnail   : {{ thumbnail }},
+                caption     : {{ caption }},
+                desc        : {{ desc }},
+                counter     : {{ counter }},
+                controls    : {{ controls }}, 
+                preload     : {{ preload }},
+
+                // Transitions
+                mode   : '{{ mode }}',
+                useCSS : true,
+                easing : 'linear',
+                speed  : {{ speed }},
+
+                // Navigation
+                hideControlOnEnd : false,
+                loop             : {{ loop }},
+                auto             : {{ auto }},
+                pause            : {{ pause }},
+                escKey           : {{ escKey }},
+                swipeThreshold    : 50,
+
+                lang : { allPhotos: '{{ lang }}' },
+            });
+        });
+    </script>
+{% endput %}

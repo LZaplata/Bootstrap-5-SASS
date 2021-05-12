@@ -1,0 +1,22 @@
+url = "/blog"
+layout = "default"
+title = "Blog"
+
+[blogPosts posts4]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "blog-post"
+==
+<div class="container-fluid">
+    <div class="container-md">
+        <h1 class="mb-4">
+            Blog
+        </h1>
+
+        {% component "posts4" %}
+    </div>
+</div>

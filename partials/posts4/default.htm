@@ -1,0 +1,43 @@
+{% set posts = __SELF__.posts %}
+
+<div class="row row-cols-xl-4 g-4">
+    {% for post in posts %}
+        <div class="col">
+            <div class="card">
+                {% for image in post.featured_images|slice(0, 1) %}
+                    <img src="{{ image.thumb(400, 400, {'mode': 'crop'}) }}" class="card-img-top" alt="{{ image.description }}" title="{{ image.title }}">
+                {% endfor %}
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">
+                        {{ post.summary|raw }}
+                    </p>
+                    <a href="{{ post.url }}" class="btn btn-primary stretched-link">
+                        Více
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <li class="no-data">{{ __SELF__.noPostsMessage }}</li>
+    {% endfor %}
+</div>
+
+<!--{% if posts.lastPage > 1 %}-->
+<!--    <ul class="pagination">-->
+<!--        {% if posts.currentPage > 1 %}-->
+<!--            <li><a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>-->
+<!--        {% endif %}-->
+
+<!--        {% for page in 1..posts.lastPage %}-->
+<!--            <li class="{{ posts.currentPage == page ? 'active' : null }}">-->
+<!--                <a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): page }) }}">{{ page }}</a>-->
+<!--            </li>-->
+<!--        {% endfor %}-->
+
+<!--        {% if posts.lastPage > posts.currentPage %}-->
+<!--            <li><a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>-->
+<!--        {% endif %}-->
+<!--    </ul>-->
+<!--{% endif %}-->
