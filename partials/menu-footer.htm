@@ -5,7 +5,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="{{ "blog"|page }}" class="nav-link link-light p-0 {% if this.page.id == "blog" %}active{% endif %}">
+        <a href="{{ "blog"|page }}" class="nav-link link-light p-0 {% if this.page.id == "blog" or this.page.id starts with "blog" %}active{% endif %}">
             Blog
         </a>
     </li>
