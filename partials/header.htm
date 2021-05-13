@@ -1,3 +1,17 @@
-<header class="container-fluid">
-    {% partial "navbar" %}
+<header class="container-fluid bg-light py-3">
+    <div class="container-lg d-flex justify-content-between align-items-center">
+        <div id="logo">
+            <a href="{{ 'homepage'|page }}">
+                <img src="{{ 'assets/images/logo.svg'|theme }}" alt="Logo">
+            </a>
+        </div>
+        <div id="menu" class="d-none d-lg-flex">
+            {% partial "menu" %}
+        </div>
+        <div id="menu-toggle" class="d-lg-none">
+            <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+                <i class="bi bi-list"></i> Menu
+            </button>
+        </div>
+    </div>
 </header>
