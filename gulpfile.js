@@ -22,7 +22,8 @@ function fontsTask() {
 function jsTask() {
     return src([
         "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/bootstrap/dist/js/bootstrap.js"
+        "node_modules/bootstrap/dist/js/bootstrap.js",
+        "node_modules/@popperjs/core/dist/umd/popper.js"
     ])
         .pipe(dest("assets/js"))
 }

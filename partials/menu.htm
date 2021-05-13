@@ -2,8 +2,16 @@
     <li class="nav-item">
         <a href="{{ "homepage"|page }}" class="nav-link {% if this.page.id == "homepage" %}active{% endif %}">Homepage</a>
     </li>
-    <li class="nav-item">
-        <a href="{{ "page"|page }}" class="nav-link {% if this.page.id == "page" %}active{% endif %}">Page</a>
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link {% if this.page.id == "page" or this.page.url starts with "/page" %}active{% endif %} dropdown-toggle" data-bs-toggle="dropdown">Page</a>
+
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ "subpage"|page }}" class="dropdown-item {% if this.page.id == "subpage" %}active{% endif %}">
+                    Subpage
+                </a>
+            </li>
+        </ul>
     </li>
     <li class="nav-item">
         <a href="{{ "blog"|page }}" class="nav-link {% if this.page.id == "blog" or this.page.id starts with "blog" %}active{% endif %}">Blog</a>

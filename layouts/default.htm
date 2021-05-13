@@ -3,7 +3,7 @@ useContent = 1
 default = 1
 ==
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-100" lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,17 +22,20 @@ default = 1
         ]|theme }}" />
     </head>
 
-    <body>
+    <body class="d-flex flex-column h-100">
         {% partial "header" %}
 
-        <main class="mt-5">
+        <main>
             {% page %}
         </main>
 
+        {% partial "footer" %}
+        {% partial "copyright" %}
         {% partial "offcanvas" %}
 
         <script src="{{ [
             'assets/js/jquery.min.js',
+            'assets/js/popper.js',
             'assets/js/bootstrap.js'
         ]|theme }}"></script>
 

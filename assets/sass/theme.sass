@@ -1,1 +1,18 @@
 @import "variables"
+
+/***** toggle main menu dropdown on hover *****/
+
+//header
+    #menu
+        .dropdown
+            .dropdown-menu
+                display: none
+
+                &.show
+                    margin-top: -2px !important
+
+            &:hover, &:focus, &:active
+                .dropdown-menu
+                    display: block
+
+/***** end toggle main menu dropdown on hover *****/
