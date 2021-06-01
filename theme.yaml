@@ -1,6 +1,7 @@
 name: "Bootstrap 5 SASS"
 description: "Skeleton theme based on Bootstrap 5 with SASS and Bootstrap Icons."
 author: "Lukáš Záplata"
+authorCode: "LZaplata"
 code: "bootstrap-5-sass"
 require:
     - "RainLab.Pages"
