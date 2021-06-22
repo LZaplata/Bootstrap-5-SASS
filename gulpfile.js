@@ -31,8 +31,8 @@ function jsTask() {
 
 function watchTask() {
     watch([
-        themeDir + "assets/**/theme.sass",
-        themeDir + "assets/**/_variables.sass",
+        themeDir + "/assets/**/theme.sass",
+        themeDir + "/assets/**/_variables.sass",
     ], {ignoreInitial: false}, sassTask);
 }
 

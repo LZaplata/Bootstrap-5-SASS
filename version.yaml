@@ -3,3 +3,4 @@
 1.0.2: Add README.md file
 1.0.3: Set author code
 1.0.4: Delete package.json file
+1.0.5: Fix Gulp watch task paths
