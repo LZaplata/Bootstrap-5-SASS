@@ -1,5 +1,5 @@
 let {src, dest, watch, parallel} = require("gulp");
-let sass = require("gulp-sass")(require("sass"));
+let sass = require("gulp-sass");
 let minify = require("gulp-clean-css");
 let themeDir = "./themes/lzaplata-bootstrap-5-sass";
 

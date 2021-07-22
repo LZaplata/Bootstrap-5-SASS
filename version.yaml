@@ -5,3 +5,4 @@
 1.0.4: Delete package.json file
 1.0.5: Fix Gulp watch task paths
 1.0.6: Update gulpfile.js and README.md files
+1.0.7: Return older version of gulp-sass because of compilation speed
