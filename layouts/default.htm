@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
-        
+
         <link rel="icon" href="{{ 'assets/images/favicon.png'|theme }}" />
 
         <title>{{ this.page.title }}</title>
@@ -31,9 +31,10 @@
 
         <script src="{{ [
             'assets/js/jquery.min.js',
-            'assets/js/popper.js',
-            'assets/js/bootstrap.js'
+            'assets/js/popper.js'
         ]|theme }}"></script>
+
+        <script src="{{ 'assets/js/bootstrap.js'|theme }}"></script>
 
         {% framework %}
         {% framework extras %}
