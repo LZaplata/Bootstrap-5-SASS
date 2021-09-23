@@ -7,3 +7,4 @@
 1.0.6: Update gulpfile.js and README.md files
 1.0.7: Return older version of gulp-sass because of compilation speed
 1.0.8: Fix javascript combining issue while debug mode is false
+1.0.9: Fix signature SVG in webkit browsers
